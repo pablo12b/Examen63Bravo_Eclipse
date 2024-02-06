@@ -14,7 +14,6 @@ import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import model.Cliente;
-import model.Recarga;
 
 @Path("clientes")
 public class ClienteService {
