@@ -37,4 +37,10 @@ public class ClienteDAO {
 		Query q = em.createQuery(jpql, Cliente.class);
 		return q.getResultList();
 	}
+	public Cliente getClientePorDNI(String dni) {
+		String jpql = "SELECT c FROM Cliente c WHERE c.dni = :dni";
+		Query q = em.createQuery(jpql, Cliente.class);
+		Cliente cliente = (Cliente) q.getSingleResult(); 
+		return cliente;
+	}
 }
