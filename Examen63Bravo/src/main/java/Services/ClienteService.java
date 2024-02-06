@@ -49,7 +49,7 @@ public class ClienteService {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("list")
-	public Response getRecargas(){
+	public Response getClientes(){
 		List <Cliente> lista = gCliente.getAll();
 		if(lista.size()>0) {
 			return Response.ok(lista).build();

@@ -16,12 +16,5 @@ public class GestionDatos {
 	@PostConstruct
 	public void init() {
 		System.out.println("Iniciando examen....");
-		Cliente administrador = new Cliente();
-		administrador.setId(0);
-		administrador.setDni("xxxxxxxxxx");
-		administrador.setNombre("admin");
-		administrador.setSaldo(1000);
-		clienteDAO.insert(administrador);
-		System.out.println("Se ingreso el administrador");
 	}
 }
