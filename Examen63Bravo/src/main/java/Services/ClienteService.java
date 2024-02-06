@@ -57,6 +57,15 @@ public class ClienteService {
 		ErrorMessage em = new ErrorMessage(6, "No se registran Clientes");
 		return Response.status(Response.Status.NOT_FOUND).entity(em).build();
 	}
+	
+	@GET
+	@Path("recarga")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response transferenciaRecarga(@QueryParam("dni") String dni,
+	                                 @QueryParam("monto") double monto) {
+		Cliente cliente = gCliente.transferencia(dni, monto);
+		return Response.ok(cliente).build();
+	}
 
 	
 }

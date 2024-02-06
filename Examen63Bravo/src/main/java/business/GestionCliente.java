@@ -30,7 +30,7 @@ public class GestionCliente {
 		return clienteDAO.getAll();
 	}
 	
-	public void transferencia(String dni, double monto) {
+	public Cliente transferencia(String dni, double monto) {
 		Cliente cliente = clienteDAO.getClientePorDNI(dni);
 		System.out.println("El saldo del cliente "+cliente.getNombre()
 						 + " antes de la transferencia es: "+cliente.getSaldo());
@@ -41,5 +41,6 @@ public class GestionCliente {
 		clienteDAO.update(cliente);
 		administrador.setSaldo(cliente.getSaldo() - monto);
 		clienteDAO.update(administrador);
+		return cliente;
 	}
 }
